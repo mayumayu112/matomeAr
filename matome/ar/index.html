@@ -13,7 +13,6 @@
             --border-color: #f0f0f0;
             --font-display: "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "Yu Mincho", serif;
             --font-text: "SF Pro Text", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue", sans-serif;
-            /* ピクセルフォント用 */
             --font-pixel: 'DotGothic16', sans-serif;
         }
 
@@ -51,20 +50,24 @@
             text-align: center;
             margin-bottom: 30px;
         }
+
         .jacket-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             object-fit: cover;
+            display: block;
+            margin: 0 auto;
         }
 
-.song-info {
+        .song-info {
             text-align: center;
-            color: #ffffff;      /* テキストを白に戻しました */
+            color: #ffffff;
             margin-top: -10px;
-            margin-bottom: 40px; /* 20pxから40pxに広げて空間を確保しました */
-            text-shadow: none;   /* 影も削除しています */
+            margin-bottom: 50px;
+            text-shadow: none;
         }
 
         .song-title {
@@ -72,7 +75,6 @@
             font-size: 17px;
             font-weight: 600;
             letter-spacing: 0.05em;
-            /* 縁取り（text-stroke）の行を削除しました */
         }
 
         .link-card {
@@ -115,20 +117,20 @@
             text-transform: uppercase;
         }
 
-        /* SNSアイコンエリア */
         .sns-links {
             display: flex;
             justify-content: center;
-            gap: 50px; /* 30pxから50pxに広げてバランス調整 */
+            gap: 50px;
             margin-top: 30px;
         }
-        
+
         .sns-links a {
             color: #ffffff;
             font-size: 24px;
             text-decoration: none;
             transition: opacity 0.3s;
         }
+
         .sns-links a:hover {
             opacity: 0.7;
         }
@@ -141,21 +143,39 @@
             letter-spacing: 0.1em;
         }
 
-        /* 1. タップを無効化し、色を少し薄くする設定 */
         .disabled-link {
-            pointer-events: none; /* クリックを完全に無効化 */
-            opacity: 0.6;        /* 全体を少し薄くする */
+            pointer-events: none;
+            opacity: 0.6;
         }
 
-        /* 2. Coming Soonをピクセル文字にする設定 */
-.coming-soon {
+        .coming-soon {
             font-family: var(--font-pixel);
-            font-size: 12px; /* 確実に14pxを適用 */
-            color: #000;    /* グレー(#888)からブラック(#000)へ変更 */
+            font-size: 12px;
+            color: #000;
             margin-right: 8px;
-            font-weight: 600; /* ブラックにするなら少し太い方が読みやすいです */
+            font-weight: 600;
         }
-        
+
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+            .link-card {
+                max-width: 85%;
+                margin: 0 auto;
+            }
+            .jacket-img {
+                width: 80%;
+                max-width: 320px;
+                margin: 0 auto 10px;
+            }
+            .link-item {
+                padding: 16px 18px;
+            }
+            .song-title {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -176,47 +196,56 @@
                 <span class="service-name">Apple Music</span>
                 <span class="play-btn">Play</span>
             </a>
-           <div class="link-item disabled-link">
-    <span class="service-name">Spotify</span>
-    <div style="display: flex; align-items: center;">
-        <span class="coming-soon">Coming Soon!</span>
-        <span class="play-btn" style="background-color: #555;">Play</span>
-    </div>
-</div>
+
+            <div class="link-item disabled-link">
+                <span class="service-name">Spotify</span>
+                <div style="display: flex; align-items: center;">
+                    <span class="coming-soon">Coming Soon!</span>
+                    <span class="play-btn" style="background-color: #555;">Play</span>
+                </div>
+            </div>
+
             <a href="https://music.youtube.com/watch?v=lMe0U72qbOM" class="link-item" target="_blank">
                 <span class="service-name">YouTube Music</span>
                 <span class="play-btn">Play</span>
             </a>
+
             <a href="https://music.line.me/webapp/album/mb000000000508e85b" class="link-item" target="_blank">
                 <span class="service-name">LINE MUSIC</span>
                 <span class="play-btn">Play</span>
             </a>
+
             <a href="https://amazon.co.jp/music/player/albums/B0GN93928X?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&ref=dm_sh_Dqqv5c6DfeWTBQmIKBfWAC9aB" class="link-item" target="_blank">
                 <span class="service-name">Amazon Music</span>
                 <span class="play-btn">Play</span>
             </a>
+
             <a href="https://s.awa.fm/track/3320d43620bd81719060" class="link-item" target="_blank">
                 <span class="service-name">AWA</span>
                 <span class="play-btn">Play</span>
             </a>
-           <div class="link-item disabled-link">
-    <span class="service-name">KKBOX</span>
-    <div style="display: flex; align-items: center;">
-        <span class="coming-soon">Coming Soon!</span>
-        <span class="play-btn" style="background-color: #555;">Play</span>
-    </div>
- </div>
-           <div class="link-item disabled-link">
-    <span class="service-name">Melon</span>
-    <div style="display: flex; align-items: center;">
-        <span class="coming-soon">Coming Soon!</span>
-        <span class="play-btn" style="background-color: #555;">Play</span>
-    </div>
-</div>
+
+            <div class="link-item disabled-link">
+                <span class="service-name">KKBOX</span>
+                <div style="display: flex; align-items: center;">
+                    <span class="coming-soon">Coming Soon!</span>
+                    <span class="play-btn" style="background-color: #555;">Play</span>
+                </div>
+            </div>
+
+            <div class="link-item disabled-link">
+                <span class="service-name">Melon</span>
+                <div style="display: flex; align-items: center;">
+                    <span class="coming-soon">Coming Soon!</span>
+                    <span class="play-btn" style="background-color: #555;">Play</span>
+                </div>
+            </div>
+
             <a href="https://music.apple.com/jp/album/memoirs-ar-ver-single/1877096205" class="link-item" target="_blank">
                 <span class="service-name">iTunes Store</span>
                 <span class="play-btn">Buy</span>
             </a>
+
             <a href="https://recochoku.jp/song/S1029834802/single" class="link-item" target="_blank">
                 <span class="service-name">レコチョク</span>
                 <span class="play-btn">Buy</span>
