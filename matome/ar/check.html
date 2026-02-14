@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7BRD7PTBY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P7BRD7PTBY');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIYUMIYU | まとめ (Ar. ver)</title>
@@ -158,24 +166,11 @@
         }
 
         @media screen and (max-width: 480px) {
-            .container {
-                width: 90%;
-            }
-            .link-card {
-                max-width: 85%;
-                margin: 0 auto;
-            }
-            .jacket-img {
-                width: 80%;
-                max-width: 320px;
-                margin: 0 auto 10px;
-            }
-            .link-item {
-                padding: 16px 18px;
-            }
-            .song-title {
-                font-size: 16px;
-            }
+            .container { width: 90%; }
+            .link-card { max-width: 85%; margin: 0 auto; }
+            .jacket-img { width: 80%; max-width: 320px; margin: 0 auto 10px; }
+            .link-item { padding: 16px 18px; }
+            .song-title { font-size: 16px; }
         }
     </style>
 </head>
@@ -198,13 +193,10 @@
                 <span class="play-btn">Play</span>
             </a>
 
-            <div class="link-item disabled-link">
+            <a href="https://open.spotify.com/intl-ja/track/5lUnsbznF1Lnwvj7Xaht2x?si=3cac2780750a48f3" class="link-item" target="_blank">
                 <span class="service-name">Spotify</span>
-                <div style="display: flex; align-items: center;">
-                    <span class="coming-soon">Coming Soon!</span>
-                    <span class="play-btn" style="background-color: #555;">Play</span>
-                </div>
-            </div>
+                <span class="play-btn">Play</span>
+            </a>
 
             <a href="https://music.youtube.com/watch?v=lMe0U72qbOM" class="link-item" target="_blank">
                 <span class="service-name">YouTube Music</span>
