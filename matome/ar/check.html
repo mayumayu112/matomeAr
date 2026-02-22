@@ -19,7 +19,7 @@
     <title>MIYUMIYU | まとめ (Ar. ver)</title>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+ <style>
         :root {
             --text-color: #333333;
             --sub-text: #888888;
@@ -57,6 +57,7 @@
             max-width: 400px;
             padding: 40px 0;
             z-index: 1;
+            margin: 0 auto; /* PCでも中央に配置 */
         }
 
         .jacket-area {
@@ -96,6 +97,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            width: 100%; /* 幅を固定せず親に合わせる */
         }
 
         .link-item {
@@ -170,29 +172,20 @@
             font-weight: 600;
         }
 
-               @media screen and (max-width: 480px) {
-            .container { 
-                width: 100%; 
-                padding: 40px 0; 
-            }
-            .link-card { 
-                width: 85%; 
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 90%; 
                 margin: 0 auto;
-                max-width: none; 
             }
-            .jacket-img { 
-                width: 80%; 
-                max-width: 320px; 
-                margin: 0 auto 10px; 
+            .link-card {
+                width: 100%;
+                margin: 0 auto;
             }
-            .link-item { 
-                padding: 16px 18px; 
-            }
-            .song-title { 
-                font-size: 16px; 
+            .jacket-img {
+                width: 100%;
+                max-width: 320px;
             }
         }
-
     </style>
 </head>
 <body>
