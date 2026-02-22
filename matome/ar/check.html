@@ -57,7 +57,7 @@
             max-width: 400px;
             padding: 40px 0;
             z-index: 1;
-            margin: 0 auto; /* PCでも中央に配置 */
+            margin: 0 auto;
         }
 
         .jacket-area {
@@ -84,12 +84,20 @@
             text-shadow: none;
         }
 
-        .song-title {
+     　　.song-title {
             font-family: var(--font-pixel);
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             letter-spacing: 0.05em;
-            padding-left: 2px;
+            line-height: 1.6;
+        }
+
+
+        .release-date {
+            font-family: var(--font-pixel);
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 4px;
         }
 
         .link-card {
@@ -97,7 +105,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            width: 100%; /* 幅を固定せず親に合わせる */
+            width: 100%;
         }
 
         .link-item {
@@ -172,22 +180,21 @@
             font-weight: 600;
         }
 
-        /* スマホ用修正：ここからまるごと上書き */
         @media screen and (max-width: 480px) {
             body {
                 padding: 0;
                 margin: 0;
-                display: block; /* スマホではFlexを解除して安定させる */
+                display: block;
             }
             .container {
-                width: 100% !important; /* 強制的に横幅いっぱいにする */
+                width: 100% !important;
                 max-width: 100% !important;
                 padding: 40px 0;
                 margin: 0 auto !important;
                 display: block;
             }
             .jacket-area, .song-info, .link-card, .sns-links {
-                width: 90%; /* コンテンツだけを90%の幅にする */
+                width: 90%;
                 margin-left: auto !important;
                 margin-right: auto !important;
             }
