@@ -172,20 +172,39 @@
             font-weight: 600;
         }
 
+        /* スマホ用修正：ここからまるごと上書き */
         @media screen and (max-width: 480px) {
+            body {
+                padding: 0;
+                margin: 0;
+                display: block; /* スマホではFlexを解除して安定させる */
+            }
             .container {
-                width: 90%; 
-                margin: 0 auto;
+                width: 100% !important; /* 強制的に横幅いっぱいにする */
+                max-width: 100% !important;
+                padding: 40px 0;
+                margin: 0 auto !important;
+                display: block;
+            }
+            .jacket-area, .song-info, .link-card, .sns-links {
+                width: 90%; /* コンテンツだけを90%の幅にする */
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
             .link-card {
-                width: 100%;
-                margin: 0 auto;
+                max-width: 360px; /* カードが広がりすぎないように制限 */
             }
             .jacket-img {
                 width: 100%;
-                max-width: 320px;
+                max-width: 300px;
+                margin: 0 auto 10px !important;
+            }
+            .song-title {
+                font-size: 15px;
             }
         }
+        /* スマホ用修正：ここまで */
+
     </style>
 </head>
 <body>
